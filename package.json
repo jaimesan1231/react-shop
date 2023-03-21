@@ -16,7 +16,7 @@
   ],
   "author": "Jaime",
   "license": "MIT",
-  "homepage": "https://github.com/jaimesan1231/react-shop",
+  "homepage": "https://jaimesan1231.github.io/react-shop",
   "dependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",

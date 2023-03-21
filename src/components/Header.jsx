@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "@styles/Header.css";
 import menuIcon from "@icons/icon_menu.svg";
 import logo from "@logos/logo_yard_sale.svg";
@@ -7,47 +7,57 @@ import shoppingCartIcon from "@icons/icon_shopping_cart.svg";
 import Menu from "./Menu";
 import AppContext from "../context/AppContext";
 import MyOrder from "../containers/MyOrder";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const { state } = useContext(AppContext);
   const [toggleOrder, setToggleOrder] = useState(false);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
   };
   const handleToggleOrder = () => {
     setToggleOrder(!toggleOrder);
   };
+  const handleToggleMobileMenu = () => {
+    setToggleMobileMenu(!toggleMobileMenu);
+  };
   return (
     <nav>
-      <img src={menuIcon} alt="menu" className="menu" />
+      <img
+        src={menuIcon}
+        alt="menu"
+        className="menu"
+        onClick={handleToggleMobileMenu}
+      />
 
       <div className="navbar-left">
         <img src={logo} alt="logo" className="nav-logo" />
 
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link to={"/"}>All</Link>
           </li>
 
           <li>
-            <a href="/">Clothes</a>
+            <Link to={"/"}>Clothes</Link>
           </li>
 
           <li>
-            <a href="/">Electronics</a>
+            <Link to={"/"}>Electronics</Link>
           </li>
 
           <li>
-            <a href="/">Furnitures</a>
+            <Link to={"/"}>Furnitures</Link>
           </li>
 
           <li>
-            <a href="/">Toys</a>
+            <Link to={"/"}>Toys</Link>
           </li>
 
           <li>
-            <a href="/">Others</a>
+            <Link to={"/"}>Others</Link>
           </li>
         </ul>
       </div>
@@ -64,7 +74,8 @@ const Header = () => {
         </ul>
       </div>
       {toggle && <Menu />}
-      {toggleOrder && <MyOrder />}
+      {toggleOrder && <MyOrder handleToggle={handleToggleOrder} />}
+      {toggleMobileMenu && <MobileMenu />}
     </nav>
   );
 };

@@ -6,7 +6,6 @@ const useGetProducts = (API) => {
       const response = await fetch(API);
       const data = await response.json();
       setProducts(data);
-      console.log(data);
     };
     getProducts();
   }, []);

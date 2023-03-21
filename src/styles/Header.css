@@ -3,12 +3,19 @@ nav {
   justify-content: space-between;
   padding: 0 24px;
   border-bottom: 1px solid var(--very-light-pink);
+  user-select: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+  top: 0;
 }
 .menu {
   display: none;
 }
 .nav-logo {
   width: 100px;
+  cursor: pointer;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -42,8 +49,10 @@ nav {
   color: var(--very-light-pink);
   font-size: var(--sm);
   margin-right: 12px;
+  cursor: pointer;
 }
 .navbar-shopping-cart {
+  cursor: pointer;
   position: relative;
 }
 .navbar-shopping-cart div {

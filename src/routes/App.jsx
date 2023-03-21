@@ -3,7 +3,7 @@ import Layout from "../containers/Layout";
 import Login from "../pages/Login";
 import RecoveryPassword from "../pages/RecoveryPassword";
 import "../styles/global.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import SendEmail from "../pages/SendEmail";
@@ -19,7 +19,7 @@ const App = () => {
   const initialState = useInitialState();
   return (
     <AppContext.Provider value={initialState}>
-      <BrowserRouter>
+      <HashRouter>
         <Layout>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -39,7 +39,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
-      </BrowserRouter>
+      </HashRouter>
     </AppContext.Provider>
   );
 };
