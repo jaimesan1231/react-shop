@@ -7,11 +7,11 @@ const NotFound = () => {
   return (
     <div className="not-found">
       <img src={notFoundIcon} alt="" />
-      <p className="not-found-text">Pagina no encontrada</p>
+      <p className="not-found-text">Page not Found</p>
       <h2>
-        Regresa a la pagina de{" "}
+        Back to
         <Link className="not-found-link" to={"/"}>
-          Inicio
+          Home
         </Link>
       </h2>
     </div>
